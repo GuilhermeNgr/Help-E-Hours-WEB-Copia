@@ -1,8 +1,11 @@
 # 👐 Help and Hours
 
-
-
-**Conectando estudantes a ONGs por um mundo mais solidário.**
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/b6bf4b90-3f05-44a8-a8ca-937538dc8265" alt="Help and Hours logo" width="250"/>
+</p>
+<p align="center">
+  <b>Conectando estudantes a ONGs por um mundo mais solidário.</b>
+</p>
 
 O **Help and Hours** é uma plataforma que aproxima estudantes que precisam de horas complementares e certificações com ONGs que necessitam de voluntários. A proposta é estimular o engajamento social, facilitar o acesso ao voluntariado e gerar impacto positivo nas comunidades.
 
