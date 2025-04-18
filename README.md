@@ -41,7 +41,7 @@ Este projeto foi desenvolvido por:
 |--------------------|---------------------------------------------------|---------------------------------------------------------------------------------------|
 | Anellise Cunha     | [@AnneCunha](https://github.com/AnneCunha)        | Idealizadora do projeto, UX/UI Designer, Criação de Prototipagem e Mídia Visual       |
 | Anna Malzone       | [@AnnaMalzone](https://github.com/AnnaMalzone)    | Documentação em vídeo e mídia, Suporte ao Design e Prototipagem                       |
-| Antonio Amaral     | [@yMARcZy](https://github.com/yMARcZy)            | Desenvolvedor Frontend, Apoio no Banco de Dados                                       |
+| Antonio Amaral     | [@yMARcZy](https://github.com/yMARcZy)            | Apoio Desenvolvedor Frontend,Banco de Dados                                           |
 | Claudio Lobo       | [@lobo-chaib](https://github.com/lobo-chaib)      | Banco de Dados, Documentação Técnica e Pesquisa Social                                |
 | Guilherme Nogueira | [@45786user](https://github.com/45786user)        | Desenvolvedor Frontend                                                                |
 | Jorge Augusto      | [@CloakerN ](https://github.com/CloakerN)         | Desenvolvedor Backend, Git Manager, Organização de Tarefas Backend                    |
