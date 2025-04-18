@@ -1,31 +1,36 @@
-/* Reset básico */
+/* ===================== RESET BÁSICO ===================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* ===================== ESTILO GERAL DO BODY ===================== */
 body {
   font-family: "Jost-Regular", Helvetica;
   line-height: 1.6;
   color: #333;
   background-color: #efeae4;
+  text-align: center; /* Centraliza textos e blocos */
 }
 
+/* ===================== HEADER ===================== */
 header {
   background-color: #ffffff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+/* Barra superior com o menu de navegação */
 .header-top {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 10px 5%;
   background-color: #0c6c6c;
   font-family: "Jost-Regular", Helvetica;
 }
 
+/* Estilo dos links do menu */
 .header-top a {
   color: white;
   text-decoration: none;
@@ -35,15 +40,28 @@ header {
   transition: background-color 0.3s ease;
 }
 
+/* Lista dos itens do menu */
+.header-itens {
+  display: flex;
+  gap: 240px; /* Espaçamento entre os itens */
+  list-style: none;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+/* Efeito hover nos links do menu */
 .header-top a:hover {
   background-color: #013440;
   border: 1px solid #f28d41;
 }
 
+/* Logo do menu (caso usada em outros locais) */
 .logo {
   height: 50px;
 }
 
+/* Ajustes gerais do nav */
 nav ul {
   display: flex;
   gap: 20px;
@@ -56,55 +74,70 @@ nav a {
   font-weight: bold;
 }
 
-nav a:hover {
-  text-decoration: underline;
-}
+/* ===================== IMAGEM DE CABEÇALHO ===================== */
 
 .header-image {
-  position: relative; /* Necessário para posicionar elementos filhos absolutos */
+  position: relative;
   height: 280px;
+  width: 100%;
 }
 
+.header-background {
+  position: relative;
+  height: 280px;
+  width: 1480px;
+  background-image: url("sua-imagem.jpg"); /* substitua pelo caminho da sua imagem */
+  background-size: cover; /* Faz a imagem cobrir toda a div */
+  background-position: center; /* Centraliza a imagem */
+  background-repeat: no-repeat; /* Evita que a imagem se repita */
+}
+
+/* Logo sobre a imagem */
 .logo4 {
   position: absolute;
-  top: 180px; /* Distância do topo da imagem */
-  left: 10px; /* Distância da esquerda da imagem */
-  height: 90px; /* Ajuste conforme o tamanho desejado */
-  z-index: 2; /* Garante que fique acima da imagem */
-  border-radius: 20%;
+  top: 140px;
+  left: 20px;
+  height: 120px;
+  width: 120px;
+  z-index: 2;
+  border-radius: 5%;
   box-shadow: #000000;
 }
 
+/* ===================== CONTEÚDO PRINCIPAL ===================== */
 main {
   padding: 20px 5%;
 }
 
+/* ===================== TEXTO DE BOAS-VINDAS ===================== */
 .label {
   width: 426px;
   height: 46px;
 }
+
 .label .bem-vindo-ao-help {
   position: relative;
-  top: auto;
-  left: auto;
   font-family: "Jost-Regular", Helvetica;
   font-weight: 400;
   color: transparent;
   font-size: 32px;
   text-align: center;
-  letter-spacing: 0;
   line-height: normal;
 }
+
 .label .text-wrapper {
   color: #000000;
 }
+
 .label .span {
   color: #026873;
 }
+
 .label .text-wrapper-2 {
   color: #f28d41;
 }
 
+/* ===================== TÍTULOS E SEÇÕES ===================== */
 h1 span {
   color: #f28500;
 }
@@ -118,6 +151,7 @@ section h2 {
   color: #0c6c6c;
 }
 
+/* ===================== BOTÕES ===================== */
 button {
   background-color: #f28500;
   color: #fff;
@@ -132,9 +166,160 @@ button:hover {
   background-color: #d47200;
 }
 
+/* ===================== BLOCO DE VÍDEO ===================== */
+.video {
+  position: relative;
+  width: 320px;
+  max-width: 100%;
+  border: 5px solid var(--azul-medio);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.video img {
+  width: 420px;
+  height: 221px;
+  display: block;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* ===================== VOLUNTARIAR ===================== */
+
+.passos-voluntariado {
+  background-color: #c5d7d9;
+  padding: 40px 20px;
+  border-top: 4px solid #f28500;
+}
+
+.passos-voluntariado h2 {
+  color: #f28500;
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.fluxo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: relative;
+  gap: 30px;
+}
+
+.passo {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  width: 250px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  flex: 1 1 200px;
+  text-align: center;
+}
+
+.passo img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.passo h3 {
+  font-size: 16px;
+  color: #0c6c6c;
+  margin-bottom: 10px;
+}
+
+.passo p {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.numero {
+  background-color: #0c6c6c;
+  color: white;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -14px;
+  left: -14px;
+  font-size: 14px;
+}
+
+.acao {
+  background-color: #0c6c6c;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.acao:hover {
+  background-color: #013440;
+}
+
+.voluntariar {
+  margin-top: 30px;
+  background-color: #f28500;
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.voluntariar:hover {
+  background-color: #d47200;
+}
+
+/* ===================== RODAPÉ ===================== */
 footer {
   text-align: center;
   padding: 15px;
   background-color: #0c6c6c;
   color: #fff;
+}
+
+/* Logo no rodapé */
+.logo-footer-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.logo-footer {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 50% / 30%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  width: 120px;
+}
+
+.logo-footer img {
+  height: 190px;
+  width: 190px;
+  object-fit: contain;
 }

@@ -7,101 +7,151 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <!-- Início do Header -->
     <header>
-        
+      <!-- Imagem de fundo com logo sobreposta -->
       <div class="header-image">
-        <img class= "logo4"
+        <img
+          class="logo4"
           src="assets/logos/logo4.png"
           alt="Logo Help and Hours"
-          class="logo"
         />
         <img
+          class="header-background"
           src="assets/imagens/image carrosel.png"
           alt="Voluntários sorrindo"
         />
-        
       </div>
+
+      <!-- Menu de navegação -->
       <div class="header-top">
         <nav>
-          <ul>
+          <ul class="header-itens">
             <li><a href="#">Home</a></li>
-              <li><a href="#">Sobre nós</a></li>
-              <li><a href="#">ONGs Disponíveis</a></li>
-              <li><a href="#">Feedbacks</a></li>
-              <li><a href="#">Login</a></li>
+            <li><a href="#">Sobre nós</a></li>
+            <li><a href="#">ONGs Disponíveis</a></li>
+            <li><a href="#">Feedbacks</a></li>
+            <li><a href="#">Login</a></li>
+          </ul>
         </nav>
       </div>
     </header>
 
+    <!-- Mensagem de boas-vindas -->
     <div class="label">
-        <p class="bem-vindo-ao-help">
-          <span class="text-wrapper">Bem-Vindo ao </span>
-          <span class="span">Help</span>
-          <span class="text-wrapper"> and </span>
-          <span class="text-wrapper-2">Hours</span>
-          <span class="text-wrapper">!</span>
-        </p>
-      </div>
-      <main>
-        <div class="container">
-          <div class="video">
-            <img src="video-placeholder.jpg" alt="Vídeo institucional" />
-            <div class="play-button">&#9658;</div>
-          </div>
+      <p class="bem-vindo-ao-help">
+        <span class="text-wrapper">Bem-Vindo ao </span>
+        <span class="span">Help</span>
+        <span class="text-wrapper"> and </span>
+        <span class="text-wrapper-2">Hours</span>
+        <span class="text-wrapper">!</span>
+      </p>
+    </div>
 
-          <div class="texto">
-            <p>
-              <em>
-                “Aqui, unimos estudantes e ONGs em uma rede de impacto
-                social.<br />
-                Descubra oportunidades de voluntariado próximas a você,<br />
-                ganhe experiência, faça a diferença e conquiste suas horas
-                complementares.<br />
-                Junte-se a nós e transforme o mundo com pequenas ações!”
-              </em>
-            </p>
-
-            <p>
-              <strong
-                >Descubra como o Help and Hours pode transformar sua jornada
-                acadêmica e social!</strong
-              >
-            </p>
-
-            <p>
-              Assista ao vídeo promocional ao lado e veja como conectar-se a
-              ONGs, ganhar experiência e conquistar suas horas complementares
-              de forma simples e impactante.<br />
-              Dê o play e faça parte dessa mudança!
-            </p>
+    <!-- Conteúdo principal -->
+    <main>
+      <div class="container">
+        <!-- Bloco de vídeo com botão de play -->
+        <div class="video">
+          <img
+            src="video-placeholder.jpg"
+            alt="Pessoas voluntárias sorrindo unidas"
+          />
+          <div
+            class="play-button"
+            role="button"
+            aria-label="Reproduzir vídeo"
+            tabindex="0"
+          >
+            &#9658;
           </div>
         </div>
-      </main>
 
-      <section class="quer-voluntariar">
-        <h2>Quer se voluntariar?</h2>
-        <p>Passos para voluntariado...</p>
-        <button>Voluntariar-se</button>
-      </section>
-
-      <section class="conheca">
-        <h2>Conheça o Help and Hours</h2>
-        <p>Descrição do projeto e como funciona.</p>
-      </section>
-
-      <section class="feedback">
-        <h2>Feedbacks de Estudantes</h2>
-        <p>Depoimentos...</p>
-      </section>
-
-      <section class="apoiadores">
-        <h2>Nossos Apoiadores</h2>
-        <p>Logos das instituições...</p>
-      </section>
+        <!-- Texto de introdução -->
+        <div class="texto">
+          <p>
+            <em
+              >“Aqui, unimos estudantes e ONGs em uma rede de impacto
+              social..."</em
+            >
+          </p>
+          <p>
+            <strong
+              >Descubra como o Help and Hours pode transformar sua jornada
+              acadêmica e social!</strong
+            >
+          </p>
+          <p>Assista ao vídeo promocional ao lado...</p>
+        </div>
+      </div>
     </main>
 
+    <!-- Seções de conteúdo -->
+    <section class="passos-voluntariado">
+      <h2>Quer se voluntariar?</h2>
+      <div class="fluxo">
+        <div class="passo">
+          <span class="numero">1</span>
+          <img src="assets/icons/volun1.png" alt="Ícone cadastro" />
+          <h3>Cadastre-se na Help and Hours</h3>
+          <p>
+            Crie seu perfil na nossa plataforma e informe seus interesses e
+            disponibilidade.
+          </p>
+          <button class="acao">Cadastrar</button>
+        </div>
+        <div class="passo">
+          <span class="numero">2</span>
+          <img src="assets/icons/volun2.png" alt="Ícone calendário" />
+          <h3>Agende com a ONG mais próxima</h3>
+          <p>
+            Acesse a plataforma, descubra quais ONGs estão precisando de
+            voluntários e entre em contato para agendar sua participação.
+          </p>
+          <button class="acao">ONGs Disponíveis</button>
+        </div>
+        <div class="passo">
+          <span class="numero">3</span>
+          <img src="assets/icons/volun3.png" alt="Ícone mãos voluntárias" />
+          <h3>Realize seu voluntariado</h3>
+          <p>
+            No dia marcado, vá até a ONG escolhida e contribua com seu tempo e
+            habilidades para ajudar quem precisa.
+          </p>
+        </div>
+        <div class="passo">
+          <span class="numero">4</span>
+          <img src="assets/icons/volun4.png" alt="Ícone certificado" />
+          <h3>Resgate seu Certificado</h3>
+          <p>
+            Após concluir sua atividade, acesse a Help and Hours para obter seu
+            certificado e validar suas horas complementares.
+          </p>
+          <button class="acao">Resgatar Certificado</button>
+        </div>
+      </div>
+      <button class="voluntariar">Voluntariar-se</button>
+    </section>
+
+    <section class="conheca">
+      <h2>Conheça o Help and Hours</h2>
+      <p>Descrição do projeto e como funciona.</p>
+    </section>
+
+    <section class="feedback">
+      <h2>Feedbacks de Estudantes</h2>
+      <p>Depoimentos...</p>
+    </section>
+
+    <section class="apoiadores">
+      <h2>Nossos Apoiadores</h2>
+      <p>Logos das instituições...</p>
+    </section>
+
+    <!-- Rodapé -->
     <footer>
       <div class="rodape">
+        <!-- Colunas de links úteis -->
         <div class="coluna-links">
           <ul>
             <li><a href="#">Home</a></li>
@@ -110,7 +160,7 @@
             <li><a href="#">ONGs Disponíveis</a></li>
           </ul>
         </div>
-    
+
         <div class="coluna-links">
           <ul>
             <li><a href="#">Login</a></li>
@@ -120,18 +170,27 @@
             <li><a href="#">Suporte</a></li>
           </ul>
         </div>
-    
-        <div class="logo-footer">
-          <img src="assets/logos/logo4.png" alt="Logo Help and Hours" />
+
+        <!-- Elementos gráficos decorativos -->
+        <div class="right-footer"><div class="rectangle"></div></div>
+        <div class="center-footer"><div class="rectangle"></div></div>
+
+        <!-- Logo no rodapé -->
+        <div class="logo-footer-container">
+          <div class="logo-footer">
+            <img src="assets/logos/logo-footer.png" alt="Logo Help and Hours" />
+          </div>
         </div>
-    
+
+        <!-- Redes sociais -->
         <div class="coluna-redes">
           <h4>Nossas redes sociais</h4>
-          <a href="#"> Instagram</a><br />
-          <a href="#"> Facebook</a>
+          <a href="#">Instagram</a><br />
+          <a href="#">Facebook</a>
         </div>
       </div>
-    
+
+      <!-- Frase final -->
       <p class="frase-final">
         “Apoie ONGs, some experiências e garanta suas horas complementares.”
       </p>
