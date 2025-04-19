@@ -25,7 +25,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px 5%;
+  padding: 5px 5%;
   background-color: #0c6c6c;
   font-family: "Jost-Regular", Helvetica;
 }
@@ -43,7 +43,7 @@ header {
 /* Lista dos itens do menu */
 .header-itens {
   display: flex;
-  gap: 240px; /* Espaçamento entre os itens */
+  gap: 200px; /* Espaçamento entre os itens */
   list-style: none;
   justify-content: center;
   padding: 0;
@@ -78,30 +78,34 @@ nav a {
 
 .header-image {
   position: relative;
-  height: 280px;
+  height: 300px;
   width: 100%;
+  overflow: hidden;
 }
 
 .header-background {
-  position: relative;
-  height: 280px;
-  width: 1480px;
-  background-image: url("sua-imagem.jpg"); /* substitua pelo caminho da sua imagem */
-  background-size: cover; /* Faz a imagem cobrir toda a div */
-  background-position: center; /* Centraliza a imagem */
-  background-repeat: no-repeat; /* Evita que a imagem se repita */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("assets/imagens/image\ carrosel.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
 }
 
 /* Logo sobre a imagem */
 .logo4 {
   position: absolute;
-  top: 140px;
-  left: 20px;
-  height: 120px;
-  width: 120px;
+  top: 120px;
+  left: 40px;
+  height: 150px;
+  width: 150px;
   z-index: 2;
   border-radius: 5%;
-  box-shadow: #000000;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 /* ===================== CONTEÚDO PRINCIPAL ===================== */
@@ -109,10 +113,53 @@ main {
   padding: 20px 5%;
 }
 
+/* ===================== CONTAINER GERAL DA SEÇÃO ===================== */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 70px; /* Espaço entre o vídeo e o texto */
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===================== BLOCO DE TEXTO ===================== */
+.texto {
+  max-width: 500px;
+  font-family: "Jost", sans-serif;
+  font-size: 16px;
+  color: #333;
+  text-align: center; /* <-- aqui está a mudança */
+  line-height: 1.6;
+  margin: 0 auto; /* centraliza o bloco em telas maiores */
+}
+
+.texto p {
+  margin-bottom: 16px;
+}
+
+.texto em {
+  display: block;
+  font-style: italic;
+  color: #333;
+}
+
+.texto strong {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #000;
+}
+
 /* ===================== TEXTO DE BOAS-VINDAS ===================== */
+
 .label {
-  width: 426px;
-  height: 46px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
 }
 
 .label .bem-vindo-ao-help {
@@ -169,60 +216,77 @@ button:hover {
 /* ===================== BLOCO DE VÍDEO ===================== */
 .video {
   position: relative;
-  width: 320px;
-  max-width: 100%;
-  border: 5px solid var(--azul-medio);
-  border-radius: 10px;
+  height: 300px;
+  width: 500px; /* mesma largura da imagem */
+  border: 9px solid #026873; /* azul da borda — ajuste a cor se quiser */
+  border-radius: 20px;
   overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* sombra opcional pra destacar */
 }
 
-.video img {
-  width: 420px;
-  height: 221px;
+.video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ou 'contain' se quiser manter proporções sem corte */
   display: block;
 }
 
-.play-button {
+.video img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/*.play-button {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 48px;
-  color: white;
+  color: #026873;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 50%;
   padding: 10px;
   cursor: pointer;
 }
+*/
 
-/* ===================== VOLUNTARIAR ===================== */
+/* CABEÇALHO */
+.cabecalho-voluntariado {
+  background-color: #f28500;
+  padding: 15px;
+  text-align: center;
+  border: 1px solid black;
+}
 
+.cabecalho-voluntariado h2 {
+  color: white;
+  margin: 0;
+  font-size: 24px;
+}
+
+/* SECTION */
 .passos-voluntariado {
   background-color: #c5d7d9;
   padding: 40px 20px;
-  border-top: 4px solid #f28500;
-}
-
-.passos-voluntariado h2 {
-  color: #f28500;
-  font-size: 24px;
-  margin-bottom: 30px;
+  border-radius: 5px;
+  border-bottom: 1px solid #000;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 .fluxo {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  position: relative;
+  align-items: center;
   gap: 30px;
 }
 
+/* PASSO (sem fundo branco) */
 .passo {
-  background-color: #fff;
-  border-radius: 15px;
-  padding: 20px;
+  background-color: transparent;
+  padding: 0;
   width: 250px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: relative;
   flex: 1 1 200px;
   text-align: center;
@@ -247,7 +311,7 @@ button:hover {
 }
 
 .numero {
-  background-color: #0c6c6c;
+  background-color: #6fbe89;
   color: white;
   font-weight: bold;
   border-radius: 50%;
@@ -262,10 +326,11 @@ button:hover {
   font-size: 14px;
 }
 
+/* BOTÕES COM BORDA PRETA */
 .acao {
   background-color: #0c6c6c;
   color: white;
-  border: none;
+  border: 1px solid black;
   padding: 8px 12px;
   border-radius: 5px;
   cursor: pointer;
@@ -276,12 +341,13 @@ button:hover {
   background-color: #013440;
 }
 
+/* BOTÃO FINAL */
 .voluntariar {
   margin-top: 30px;
   background-color: #f28500;
   color: white;
   padding: 12px 30px;
-  border: none;
+  border: 1px solid black;
   font-size: 16px;
   border-radius: 6px;
   cursor: pointer;
@@ -289,6 +355,16 @@ button:hover {
 
 .voluntariar:hover {
   background-color: #d47200;
+}
+
+/* SETAS ENTRE OS PASSOS */
+.seta {
+  width: 50px;
+  height: 30px;
+  background-image: url("assets/icons/seta-direita.png"); /* sua imagem de seta tracejada */
+  background-repeat: no-repeat;
+  background-size: contain;
+  align-self: center;
 }
 
 /* ===================== Feedback ===================== */
