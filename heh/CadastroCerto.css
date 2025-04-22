@@ -1,4 +1,48 @@
 
+header {
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Barra superior com o menu de navegação */
+.header-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 5%;
+  background-color: #0c6c6c;
+  font-family: "Jost-Regular", Helvetica;
+}
+
+/* Estilo dos links do menu */
+.header-top a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+
+/* Lista dos itens do menu */
+.header-itens {
+  display: flex;
+  gap: 200px; /* Espaçamento entre os itens */
+  list-style: none;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+/* Efeito hover nos links do menu */
+.header-top a:hover {
+  background-color: #013440;
+  border: 1px solid #f28d41;
+}
+
+
+
+
 * {
     margin: 0;
     padding: 0;
@@ -11,7 +55,7 @@
   }
 
   nav {
-    background-color: #005c61;
+
     color: white;
     padding: 10px 0;
     text-align: center;
@@ -119,7 +163,7 @@
   }
 
   .popup h3 {
-    color: #00e676;
+    color: #ffffff;
     margin-bottom: 10px;
   }
 
@@ -142,14 +186,19 @@
     cursor: pointer;
   }
 
-  .btn-home {
-    background-color: #f57c00;
-    color: white;
+/*arrumar a cor do botao*/
+  .btn-home{
+    background-color: #F28D41;
+
+    border: none; /* Sem borda (opcional) */
+    padding: 10px 20px; /* Espaçamento interno (opcional) */
+    border-radius: 5px; /* Cantos arredondados (opcional) */
+    cursor: pointer; /* Mãozinha ao passar o mouse (opcional) */
   }
 
-  .btn-login {
-    background-color: #66bb6a;
-    color: white;
+  .btn-login{
+    background-color: #fda500;
+    color: rgb(255, 255, 255);
   }
 
 
