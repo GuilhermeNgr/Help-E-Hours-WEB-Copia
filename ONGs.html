@@ -10,8 +10,8 @@
         table, th, td { border: 1px solid black; border-collapse: collapse; padding: 8px; }
         th { background-color: #f2f2f2; }
         button { padding: 5px 10px; margin: 5px; }
-        #orgForm { margin-top: 20px; padding: 10px; border: 1px solid #ccc; }
-        #orgForm label { display: block; margin: 5px 0; }
+        #ongsForm { margin-top: 20px; padding: 10px; border: 1px solid #ccc; }
+        #ongsForm label { display: block; margin: 5px 0; }
         #errorMessage { color: red; margin: 10px 0; }
         #successMessage { color: green; margin: 10px 0; }
         #loadingMessage { color: blue; }
@@ -23,7 +23,7 @@
     <div id="successMessage"></div>
     <div id="errorMessage"></div>
     <div id="loadingMessage">Carregando...</div>
-    <table id="orgsTable">
+    <table id="ongsTable">
         <thead>
             <tr>
                 <th>Nome da ONG</th>
@@ -39,7 +39,7 @@
         </thead>
         <tbody></tbody>
     </table>
-    <div id="orgForm" style="display: none;">
+    <div id="ongsForm" style="display: none;">
         <form>
             <label>Nome da ONG: <input type="text" id="nome_ong" required></label>
             <label>Email: <input type="email" id="email_ong"></label>
@@ -63,29 +63,29 @@
             return phone.replace(/\D/g, '');
         }
 
-        async function fetchOrgs() {
+        async function fetchOngs() {
             try {
                 document.getElementById('loadingMessage').style.display = 'block';
-                const { data, error } = await supabaseClient.from('orgs').select('*');
+                const { data, error } = await supabaseClient.from('ongs').select('*');
                 if (error) throw error;
 
-                const tbody = document.querySelector('#orgsTable tbody');
+                const tbody = document.querySelector('#ongsTable tbody');
                 tbody.innerHTML = '';
 
-                data.forEach(org => {
+                data.forEach(ongs => {
                     const row = document.createElement('tr');
                     row.innerHTML = `
-                        <td>${org.nome_ong}</td>
-                        <td>${org.email_ong || ''}</td>
-                        <td>${org.telefone_ong || ''}</td>
-                        <td>${org.endereco_ong || ''}</td>
-                        <td>${org.cidade_ong || ''}</td>
-                        <td>${org.area_atuacao || ''}</td>
-                        <td>${org.responsavel || ''}</td>
-                        <td>${org.descricao || ''}</td>
+                        <td>${ongs.nome_ong}</td>
+                        <td>${ongs.email_ong || ''}</td>
+                        <td>${ongs.telefone_ong || ''}</td>
+                        <td>${ongs.endereco_ong || ''}</td>
+                        <td>${ongs.cidade_ong || ''}</td>
+                        <td>${ongs.area_atuacao || ''}</td>
+                        <td>${ongs.responsavel || ''}</td>
+                        <td>${ongs.descricao || ''}</td>
                         <td>
-                            <button onclick="editOrg('${org.nome_ong}')">Editar</button>
-                            <button onclick="deleteOrg('${org.nome_ong}')">Excluir</button>
+                            <button onclick="editOngs('${ongs.nome_ong}')">Editar</button>
+                            <button onclick="deleteOngs('${ongs.nome_ong}')">Excluir</button>
                         </td>
                     `;
                     tbody.appendChild(row);
@@ -98,17 +98,17 @@
             }
         }
 
-        function showForm(org = null) {
-            document.getElementById('orgForm').style.display = 'block';
+        function showForm(ongs = null) {
+            document.getElementById('ongsForm').style.display = 'block';
             const fields = ['nome_ong', 'email_ong', 'telefone_ong', 'endereco_ong', 'cidade_ong', 'area_atuacao', 'responsavel', 'descricao'];
             fields.forEach(field => {
-                document.getElementById(field).value = org ? org[field] || '' : '';
+                document.getElementById(field).value = ongs ? ongs[field] || '' : '';
             });
-            document.getElementById('nome_ong').readOnly = !!org;
+            document.getElementById('nome_ong').readOnly = !!ongs;
         }
 
-        async function editOrg(nome) {
-            const { data, error } = await supabaseClient.from('orgs').select('*').eq('nome_ong', nome);
+        async function editOngs(nome) {
+            const { data, error } = await supabaseClient.from('ongs').select('*').eq('nome_ong', nome);
             if (error || !data.length) {
                 document.getElementById('errorMessage').textContent = 'Erro ao buscar ONG para edição.';
                 return;
@@ -116,18 +116,18 @@
             showForm(data[0]);
         }
 
-        async function deleteOrg(nome) {
+        async function deleteOngs(nome) {
             if (!confirm(`Deseja realmente excluir a ONG "${nome}"?`)) return;
-            const { error } = await supabaseClient.from('orgs').delete().eq('nome_ong', nome);
+            const { error } = await supabaseClient.from('ongs').delete().eq('nome_ong', nome);
             if (error) {
                 document.getElementById('errorMessage').textContent = `Erro ao excluir: ${error.message}`;
             } else {
-                fetchOrgs();
+                fetchOngs();
             }
         }
 
-        async function saveOrg() {
-            const org = {
+        async function saveOngs() {
+            const ongs = {
                 nome_ong: document.getElementById('nome_ong').value,
                 email_ong: document.getElementById('email_ong').value,
                 telefone_ong: formatPhoneNumber(document.getElementById('telefone_ong').value),
@@ -143,13 +143,13 @@
             try {
                 let response;
                 if (isUpdate) {
-                    response = await supabaseClient.from('orgs').update(org).eq('nome_ong', org.nome_ong);
+                    response = await supabaseClient.from('ongs').update(ongs).eq('nome_ong', ongs.nome_ong);
                 } else {
-                    response = await supabaseClient.from('orgs').insert([org]);
+                    response = await supabaseClient.from('ongs').insert([ongs]);
                 }
                 if (response.error) throw response.error;
-                document.getElementById('orgForm').style.display = 'none';
-                fetchOrgs();
+                document.getElementById('ongsForm').style.display = 'none';
+                fetchOngs();
             } catch (error) {
                 document.getElementById('errorMessage').textContent = `Erro ao salvar: ${error.message}`;
             }
@@ -157,15 +157,15 @@
 
         function init() {
             document.getElementById('addNewButton').addEventListener('click', () => showForm());
-            document.getElementById('saveButton').addEventListener('click', saveOrg);
+            document.getElementById('saveButton').addEventListener('click', saveOngs);
             document.getElementById('cancelButton').addEventListener('click', () => {
-                document.getElementById('orgForm').style.display = 'none';
+                document.getElementById('ongsForm').style.display = 'none';
             });
 
-            supabaseClient.channel('orgs-channel')
-                .on('postgres_changes', { event: '*', schema: 'public', table: 'orgs' }, payload => {
+            supabaseClient.channel('ongs-channel')
+                .on('postgres_changes', { event: '*', schema: 'public', table: 'ongs' }, payload => {
                     console.log('Mudança detectada:', payload);
-                    fetchOrgs();
+                    fetchOngs();
                 })
                 .subscribe(status => {
                     if (status === 'SUBSCRIBED') {
@@ -173,7 +173,7 @@
                     }
                 });
 
-            fetchOrgs();
+            fetchOngs();
         }
 
         document.addEventListener('DOMContentLoaded', init);
