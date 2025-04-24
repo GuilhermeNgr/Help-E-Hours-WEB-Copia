@@ -1,6 +1,11 @@
 # 👐 Help & Hours
 
 <p align="center">
+  <img src="http://img.shields.io/static/v1?label=License&message=MIT&color=green&style=for-the-badge"/>
+  <img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=RED&style=for-the-badge"/>
+
+</p>
+<p align="center">
   <img src="https://github.com/user-attachments/assets/b6bf4b90-3f05-44a8-a8ca-937538dc8265" alt="Help and Hours logo" width="250"/>
 </p>
 <p align="center">
