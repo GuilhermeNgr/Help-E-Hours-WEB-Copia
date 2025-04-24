@@ -10,16 +10,21 @@
   }
   header {
     background-color: #0A5C5C;
-    padding: 10px 0;
+    padding: 70px 0;
     text-align: center;
   }
   nav a {
     color: white;
-    margin: 0 15px;
+ 
     text-decoration: none;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 20px;
+    width: 50px;
+    margin: 0 120px;
+    
+
   }
+  
   .container {
     background-color: #F7F0E7;
     max-width: 960px;
@@ -297,7 +302,7 @@
     line-height: normal;
   }
   
-  copyright {
+  .copyright {
     color: #fffded;
     text-align: center;
     font-family: Jost;
